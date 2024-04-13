@@ -100,7 +100,7 @@ export const AppleScrolling = ({
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://newsapi.org/v2/everything?q=apple&from=2024-04-12&to=2024-04-12&sortBy=popularity&apiKey=bec4aae11a2d4dc2b97c5220c373f271'
+          'https://newsapi.org/v2/everything?q=apple&from=2024-04-12&to=2024-04-12&sortBy=popularity&apiKey=cb5869b1c2bb49b2aeaabaaf9e98c62d'
         );
         const data: ApiResponse = await response.json();
         setNews(data);

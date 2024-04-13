@@ -100,7 +100,7 @@ export const InfiniteMovingCards = ({
     async function fetchData() {
       try {
         const response = await fetch(
-          'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bec4aae11a2d4dc2b97c5220c373f271'
+          'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=cb5869b1c2bb49b2aeaabaaf9e98c62d'
         );
         const data: ApiResponse = await response.json();
         setNews(data);
