@@ -4,7 +4,6 @@ import { useEffect ,useState } from 'react';
 import { Link } from '@mui/material';
 
 export const InfiniteMovingCards = ({
-  items,
   direction = 'left',
   speed = 'fast',
   pauseOnHover = true,
