@@ -6,6 +6,7 @@ import TechCrunch from './components/TechCrunch'
 import  Body  from './components/Body'
 import { MovingNews } from './components/MovingNews'
 import { WallStreet } from './components/WallStreet'
+import { AppleNews } from './components/AppleNews'
 function App() {
   
 
@@ -17,6 +18,7 @@ function App() {
      <TechCrunch/>
      <MovingNews/>
      <WallStreet/>
+     <AppleNews />
     </div>
   )
 }
