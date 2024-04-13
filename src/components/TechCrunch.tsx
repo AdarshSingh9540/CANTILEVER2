@@ -35,7 +35,7 @@ interface ApiResponse {
   articles: Article[];
 }
 
-export default function Body() {
+export default function TechCrunch() {
   const [expanded, setExpanded] = React.useState<number | null>(null);
   const [news, setNews] = React.useState<ApiResponse | null>(null);
 
@@ -46,7 +46,7 @@ export default function Body() {
   React.useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=bec4aae11a2d4dc2b97c5220c373f271");
+        const response = await fetch("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bec4aae11a2d4dc2b97c5220c373f271");
         const data = await response.json();
         setNews(data);
       } catch (error) {
@@ -58,7 +58,9 @@ export default function Body() {
   }, []);
 
   return (
-    <div style={{color:"white"}} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 bg-black m-4">
+    <>
+    <h1 className='text-white font-bold text-4xl m-6 p-4'>Top headlines from TechCrunch :</h1>
+    <div style={{color:"white"}} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 bg-black m-8">
       {news && news.articles.map((article, index) => ( article.urlToImage && (
         <Card  key={index} sx={{ maxWidth: 345, marginBottom: '20px', background:"black" , color:"white" , border:"2px solid gray",transition: 'transform 0.3s ease',
         '&:hover': {transform: 'scale(1.05)',  },
@@ -121,5 +123,6 @@ export default function Body() {
       )
       ))}
     </div>
+    </>
   );
 }
