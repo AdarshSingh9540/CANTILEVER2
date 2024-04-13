@@ -14,6 +14,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Shimmer from './Shimmer'; // Import the shimmer component
+import { Link } from '@mui/material';
 
 interface Article {
   source: {
@@ -60,70 +61,72 @@ export default function Body() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 bg-black m-4">
       {!news ? (
-        // Render shimmer for each placeholder
         Array.from({ length: 8 }).map((_, index) => (
           <Shimmer key={index} />
         ))
       ) : (
-        // Render fetched data
         news.articles.map((article, index) => (
-          <Card key={index} sx={{ maxWidth: 345, marginBottom: '20px', background:"black" , color:"white" , border:"2px solid gray",transition: 'transform 0.3s ease',
-            '&:hover': {transform: 'scale(1.05)',  },
-          }}>
-            <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                  {article.author ? article.author.charAt(0) : ''}
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon style={{ color: 'white' }} />
-                </IconButton>
-              }
-              title={article.source.name}
-              subheader={
-                <Typography variant="subtitle2" sx={{ color: 'white' }}>
-                  {article.publishedAt}
+       
+          article.urlToImage && (
+           <Link href={article.url} style={{textDecoration:"none" , cursor:"pointer"}}>
+             <Card key={index} sx={{ maxWidth: 345, marginBottom: '20px', background:"black" , color:"white" , border:"2px solid gray",transition: 'transform 0.3s ease',
+              '&:hover': {transform: 'scale(1.05)',  },
+            }}>
+              <CardHeader
+                avatar={
+                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                    {article.author ? article.author.charAt(0) : ''}
+                  </Avatar>
+                }
+                action={
+                  <IconButton aria-label="settings">
+                    <MoreVertIcon style={{ color: 'white' }} />
+                  </IconButton>
+                }
+                title={article.source.name}
+                subheader={
+                  <Typography variant="subtitle2" sx={{ color: 'white' }}>
+                    {article.publishedAt}
+                  </Typography>
+                }
+              />
+              <CardMedia 
+                component="img"
+                style={{ height: '220px', width: '90%', justifySelf: 'center' , marginLeft:"15px" }}
+                image={article.urlToImage}
+                alt="Article Image"
+              />
+              <CardContent >
+                <Typography variant="body2" color="text.secondary" style={{color:"white"}}>
+                  {article.title}
                 </Typography>
-              }
-            />
-            <CardMedia 
-              component="img"
-              style={{ height: '220px', width: '90%', justifySelf: 'center' , marginLeft:"15px" }}
-              image={article.urlToImage}
-              alt="Article Image"
-            />
-            <CardContent >
-              <Typography variant="body2" color="text.secondary" style={{color:"white"}}>
-                {article.title}
-              </Typography>
-            </CardContent>
-            <CardActions disableSpacing style={{color:"white"}}> 
-              <IconButton aria-label="add to favorites" style={{color:"white"}}>
-                <FavoriteIcon style={{color:"white"}} />
-              </IconButton>
-              <IconButton aria-label="share" style={{color:"white"}}>
-                <ShareIcon />
-              </IconButton>
-              <IconButton
-              style={{color:"white"}}
-                aria-expanded={expanded === index}
-                onClick={() => handleExpandClick(index)}
-                aria-label="show more"
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-            <Collapse in={expanded === index} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography style={{color:"white"}}  paragraph>Description:</Typography>
-                <Typography style={{color:"white"}} paragraph>{article.description}</Typography>
-                {/* <Typography style={{color:"white"}} paragraph>Content:</Typography>
-                <Typography style={{color:"white"}} paragraph>{article.content}</Typography> */}
               </CardContent>
-            </Collapse>
-          </Card>
+              <CardActions disableSpacing style={{color:"white"}}> 
+                <IconButton aria-label="add to favorites" style={{color:"white"}}>
+                  <FavoriteIcon style={{color:"white"}} />
+                </IconButton>
+                <IconButton aria-label="share" style={{color:"white"}}>
+                  <ShareIcon />
+                </IconButton>
+                <IconButton
+                  style={{color:"white"}}
+                  aria-expanded={expanded === index}
+                  onClick={() => handleExpandClick(index)}
+                  aria-label="show more"
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardActions>
+              <Collapse in={expanded === index} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography style={{color:"white"}}  paragraph>Description:</Typography>
+                  <Typography style={{color:"white"}} paragraph>{article.description}</Typography>
+                </CardContent>
+              </Collapse>
+            </Card>
+           
+           </Link>
+          )
         ))
       )}
     </div>
