@@ -89,12 +89,14 @@ export const AppleScrolling = ({
     articles: Article[];
   }
 
+  
   const truncateDescription = (description: string, maxLength: number) => {
     if (description.length > maxLength) {
       return `${description.slice(0, maxLength)}...`;
     }
     return description;
   };
+
 
   React.useEffect(() => {
     async function fetchData() {
@@ -151,8 +153,9 @@ export const AppleScrolling = ({
                           <span className="flex flex-col gap-1">
                           <span className=" text-sm leading-[1.1] text-gray-400 font-normal">
                               {truncateDescription(article.description, 100)}
-                              {article.description.length > 150 && <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Read More...</a>}
+                              {article.description.length > 100 && <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Read More...</a>}
                             </span>
+
                             <div style={{ fontSize: '12px', display: 'flex', flexDirection: 'column', color: 'white', alignItems: 'flex-end' }}>
                               <p>{article.author}</p>
                               <p>{article.publishedAt}</p>

@@ -54,8 +54,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" >
-        <Toolbar className='bg-blue-' >
+      <AppBar position="static" className="bg-gradient-to-b from-slate-800 to-slate-900 border-b-2">
+        <Toolbar className='bg-black border-gray-200' >
           <IconButton
             size="large"
             edge="start"
@@ -71,7 +71,7 @@ export default function Header() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            WorldWire
           </Typography>
           <Search>
             <SearchIconWrapper>

@@ -16,8 +16,8 @@ function App() {
      {/* <Btn/> */}
      <Body/>
      <TechCrunch/>
-     <MovingNews/>
      <WallStreet/>
+     <MovingNews/>
      <AppleNews />
     </div>
   )
