@@ -2,11 +2,12 @@
 import './App.css'
 // import {Btn} from './components/Button'
 import Header from './components/Header'
-import TechCrunch from './components/TechCrunch'
+// import TechCrunch from './components/TechCrunch'
 import  Body  from './components/Body'
 import { MovingNews } from './components/MovingNews'
 import { WallStreet } from './components/WallStreet'
 import { AppleNews } from './components/AppleNews'
+import Footer from './components/Footer'
 function App() {
   
 
@@ -15,10 +16,11 @@ function App() {
      <Header/>
      {/* <Btn/> */}
      <Body/>
-     <TechCrunch/>
+     {/* <TechCrunch/> */}
      <WallStreet/>
      <MovingNews/>
      <AppleNews />
+     <Footer/>
     </div>
   )
 }

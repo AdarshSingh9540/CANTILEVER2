@@ -78,7 +78,7 @@ export default function Body() {
       ) : (
         news.articles.map((article, index) => (
           article.urlToImage && (
-            <Link key={index} href={article.url} style={{ textDecoration: "none", cursor: "pointer" }}>
+            
               <Card
               className="bg-gradient-to-br from-slate-800 to-slate-1000 max-w-345 mb-20 text-white shadow-md transition-transform ease-in duration-300 hover:scale-105 transform hover:duration-300"
                 
@@ -135,14 +135,17 @@ export default function Body() {
                     <ExpandMoreIcon />
                   </IconButton>
                 </CardActions>
+                
                 <Collapse in={expanded === index} timeout="auto" unmountOnExit>
+                <Link key={index} href={article.url} style={{ textDecoration: "none", cursor: "pointer" }}>               
                   <CardContent>
                     <Typography style={{ color: "white" }} paragraph>Description:</Typography>
                     <Typography style={{ color: "white" }} paragraph>{article.description}</Typography>
                   </CardContent>
+                </Link>
                 </Collapse>
               </Card>
-            </Link>
+            
           )
         ))
       )}
