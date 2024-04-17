@@ -40,14 +40,14 @@ export default function Body() {
 
   React.useEffect(() => {
     // Fetching data on component mount
-    const data = fetchNewsData();
-    const flattenedArticles = data?.articles.flatMap((nested) => nested.articles);
-    setNews({ ...data, articles: flattenedArticles });
-    setLikes(new Array(flattenedArticles?.length || 0).fill(0));
+    const data1: ApiResponse | null = fetchNewsData(); // Explicitly typing as ApiResponse | null
+    setNews(data1);
+    console.log(data1)
+    setLikes(new Array(data1?.articles.length || 0).fill(0)); // Adjusting likes initialization
   }, []);
-
+  
   const handleLike = (index: number) => {
-    setLikes((prevLikes) => {
+    setLikes(prevLikes => {
       const newLikes = [...prevLikes];
       newLikes[index] += 1;
       return newLikes;
