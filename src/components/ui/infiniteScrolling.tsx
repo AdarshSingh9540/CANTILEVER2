@@ -135,7 +135,7 @@ export const InfiniteScrolling = ({
             <>
               {news.articles.map((article, idx) => (
                 article.urlToImage && (
-                  <a key={idx} href={article.url} target="_blank" rel="noopener noreferrer" className="link">
+                  <a key={idx} href={article?.url} target="_blank" rel="noopener noreferrer" className="link ">
                     <li
                       className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 md:w-[450px]"
                       style={{
@@ -145,20 +145,20 @@ export const InfiniteScrolling = ({
                       }}
                     >
                       <blockquote>
-                        <img src={article.urlToImage} alt="" className="w-[100%]" />
+                        <img src={article?.urlToImage} alt="" className="w-[100%]" />
                         <span className=" relative z-20 text-sm leading-[1.6] text-gray-100 font-normal">
-                          {article.title}
+                          {article?.title}
                         </span>
                         <div className="relative z-20 mt-6 flex flex-row items-center">
                           <span className="flex flex-col gap-1">
                           <span className=" text-sm leading-[1.1] text-gray-400 font-normal">
                               {truncateDescription(article.description, 100)}
-                              {article.description.length > 100 && <a href={article.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Read More...</a>}
+                              {article?.description?.length > 100 && <a href={article?.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Read More...</a>}
                             </span>
 
                             <div style={{ fontSize: '12px', display: 'flex', flexDirection: 'column', color: 'white', alignItems: 'flex-end' }}>
-                              <p>{article.author}</p>
-                              <p>{article.publishedAt}</p>
+                              <p>{article?.author}</p>
+                              <p>{article?.publishedAt}</p>
                             </div>
                           </span>
                         </div>
