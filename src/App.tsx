@@ -4,9 +4,9 @@ import './App.css'
 import Header from './components/Header'
 // import TechCrunch from './components/TechCrunch'
 import  Body  from './components/Body'
-import { MovingNews } from './components/MovingNews'
-import { WallStreet } from './components/WallStreet'
-import { AppleNews } from './components/AppleNews'
+// import { MovingNews } from './components/MovingNews'
+// import { WallStreet } from './components/WallStreet'
+// import { AppleNews } from './components/AppleNews'
 import Footer from './components/Footer'
 function App() {
   
@@ -17,9 +17,9 @@ function App() {
      {/* <Btn/> */}
      <Body/>
      {/* <TechCrunch/> */}
-     <WallStreet/>
+     {/* <WallStreet/>
      <MovingNews/>
-     <AppleNews />
+     <AppleNews /> */}
      <Footer/>
     </div>
   )
