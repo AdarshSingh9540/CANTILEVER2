@@ -5,8 +5,8 @@ import { AppleScrolling } from "./ui/AppleScrolling";
 export function AppleNews() {
   return (
     <>
-    <h1 className='text-white font-bold text-4xl m-6 mb-0 p-4'>Top headlines from Apple :</h1>
-    <div className="h-[40rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden ">
+    <h1 className='text-white font-bold text-2xl lg:4xl m-2 lg:m-4 mb-0 p-2 lg:p-4 '>Top headlines from Apple</h1>
+    <div className="h-[28rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden ">
       <AppleScrolling
         items={testimonials}
         direction="right"

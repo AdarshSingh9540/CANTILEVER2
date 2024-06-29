@@ -5,18 +5,19 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { fetchNewsData } from './Helper';
 
 interface Article {
   source: {
     id: string | null;
     name: string;
   };
-  author: string;
+  author: string | null;
   title: string;
   description: string | null;
   url: string;
   urlToImage: string | null;
-  publishedAt: string;
+  publishedAt: string | null;
   content: string | null;
 }
 
@@ -26,8 +27,7 @@ interface ApiResponse {
   articles: Article[];
 }
 
-// Import the hardcoded data directly from the Helper module
-import { fetchNewsData } from './Helper';
+
 
 export default function Body() {
   const [expanded, setExpanded] = React.useState<number | null>(null);
@@ -39,11 +39,11 @@ export default function Body() {
   };
 
   React.useEffect(() => {
-    // Fetching data on component mount
-    const data1: ApiResponse | null = fetchNewsData(); // Explicitly typing as ApiResponse | null
+  
+    const data1: ApiResponse | null = fetchNewsData(); 
     setNews(data1);
-    console.log(data1)
-    setLikes(new Array(data1?.articles.length || 0).fill(0)); // Adjusting likes initialization
+    // console.log(data1)
+    setLikes(new Array(data1?.articles.length || 0).fill(0)); 
   }, []);
   
   const handleLike = (index: number) => {

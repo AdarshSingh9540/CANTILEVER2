@@ -48,6 +48,7 @@ export default function TechCrunch() {
         const response = await fetch("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=bec4aae11a2d4dc2b97c5220c373f271");
         const data = await response.json();
         setNews(data);
+        console.log(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }

@@ -1,18 +1,19 @@
-// import React from 'react';
+
 
 interface Article {
   source: {
     id: string | null;
     name: string;
   };
-  author: string | null;
+  author: string | null; // Adjusted to match the data from fetchNewsData
   title: string;
-  description: string|null;
+  description: string | null;
   url: string;
-  urlToImage: string|null;
-  publishedAt: string | null;
+  urlToImage: string | null;
+  publishedAt: string | null; // Adjusted to match the data from fetchNewsData
   content: string | null;
 }
+
 
 interface ApiResponse {
   status: string;
@@ -20,8 +21,7 @@ interface ApiResponse {
   articles: Article[];
 }
 
-// Define your hardcoded data
-// Define your hardcoded data
+
 const hardcodedData: ApiResponse = {
     status: "ok",
     totalResults: 33,
@@ -285,11 +285,11 @@ const hardcodedData: ApiResponse = {
         "publishedAt": "2024-04-15T13:33:41Z",
         "content": "If you click 'Accept all', we and our partners, including 238 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
       }
-      // Add more articles here...
+      
     ]
   };
   
   export function fetchNewsData(): ApiResponse {
-    return hardcodedData; // Return the hardcoded data instead of fetching from an API
+    return hardcodedData; 
   }
   

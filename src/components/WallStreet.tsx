@@ -1,11 +1,11 @@
 "use client";
-import { InfiniteScrolling } from "./ui/infiniteScrolling";
+import {InfiniteScrolling } from "./ui/infiniteScrolling";
 
 export function WallStreet() {
   return (
     <>
-    <h1 className='text-white font-bold text-4xl m-6  mb-0 p-4'>Articles By The Wall Street :</h1>
-    <div className="h-[30rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden ">
+    <h1 className='text-white font-bold text-2xl lg:4xl m-2 lg:m-4 mb-0 p-2 lg:p-4 '>Articles By The Wall Street</h1>
+    <div className="h-[28rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden ">
       <InfiniteScrolling
       items={testimonials}
         direction="right"
