@@ -276,7 +276,7 @@ export const InfiniteMovingCards = ({
                         </a>
                       )}
                     </span>
-                    <div style={{ fontSize: '12px', display: 'flex', flexDirection: 'column', color: 'white', alignItems: 'flex-end' }}>
+                    <div className='text-purple-200' style={{ fontSize: '12px', display: 'flex', flexDirection: 'column',  alignItems: 'flex-end' }}>
                       <p>{article?.author}</p>
                       <p>{article?.publishedAt}</p>
                     </div>

@@ -59,7 +59,7 @@ export default function TechCrunch() {
 
   return (
     <>
-    <h1 className='text-white font-bold text-4xl m-6 p-4'>Top headlines from TechCrunch :</h1>
+    {/* <h1 className=' font-bold text-4xl m-6 p-4 '>Top headlines from TechCrunch :</h1> */}
     <div style={{color:"white"}} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 bg-black m-8">
       {news && news.articles.map((article, index) => ( article.urlToImage && (
         <Card  style={{background: 'linear-gradient(180deg, var(--slate-800), var(--slate-700)'}} key={index} sx={{ maxWidth: 345, marginBottom: '20px', background:"black" , color:"white" ,transition: 'transform 0.3s ease',

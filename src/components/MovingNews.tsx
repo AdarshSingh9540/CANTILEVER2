@@ -6,7 +6,7 @@ import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards"
 export function MovingNews() {
   return (
     <>
-    <h1 className='text-white font-bold text-2xl lg:4xl m-2 lg:m-4 mb-0 p-2 lg:p-4 '>Top headlines from TechCrunch</h1>
+    <h1 className='text-yellow-400 font-bold text-2xl lg:4xl m-2 lg:m-4 mb-0 p-2 lg:p-4 text-center '>Top headlines from TechCrunch</h1>
     <div className="h-[28rem] rounded-md flex flex-col antialiased  dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden mt-0">
       <InfiniteMovingCards
         items={testimonials}
