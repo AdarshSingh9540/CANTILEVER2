@@ -68,11 +68,16 @@ export default function Header() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{
+                  flexGrow: 1,
+                  marginLeft: { xs: 10, sm: 0 },
+                  
+                }}
           >
             WorldWire
           </Typography>
-          <Search>
+        <div className='hidden lg:block'>
+              <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -80,7 +85,8 @@ export default function Header() {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+             </Search>
+        </div>
         </Toolbar>
       </AppBar>
     </Box>

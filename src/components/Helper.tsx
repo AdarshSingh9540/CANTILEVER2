@@ -5,12 +5,12 @@ interface Article {
     id: string | null;
     name: string;
   };
-  author: string | null; // Adjusted to match the data from fetchNewsData
+  author: string | null; 
   title: string;
   description: string | null;
   url: string;
   urlToImage: string | null;
-  publishedAt: string | null; // Adjusted to match the data from fetchNewsData
+  publishedAt: string | null; 
   content: string | null;
 }
 

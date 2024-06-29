@@ -27,8 +27,6 @@ interface ApiResponse {
   articles: Article[];
 }
 
-
-
 export default function Body() {
   const [expanded, setExpanded] = React.useState<number | null>(null);
   const [news, setNews] = React.useState<ApiResponse | null>(null);
@@ -39,19 +37,35 @@ export default function Body() {
   };
 
   React.useEffect(() => {
-  
     const data1: ApiResponse | null = fetchNewsData(); 
     setNews(data1);
-    // console.log(data1)
     setLikes(new Array(data1?.articles.length || 0).fill(0)); 
   }, []);
-  
+
   const handleLike = (index: number) => {
     setLikes(prevLikes => {
       const newLikes = [...prevLikes];
       newLikes[index] += 1;
       return newLikes;
     });
+  };
+
+  const handleShare = async (articleUrl: string, articleTitle: string) => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: articleTitle,
+          url: articleUrl,
+        });
+        console.log('Shared successfully');
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+     
+      console.log('Web Share API not supported');
+     
+    }
   };
 
   return (
@@ -104,7 +118,7 @@ export default function Body() {
                   <FavoriteIcon style={{ color: likes[index] > 0 ? "red" : "white" }} />
                   {likes[index] > 0 && <div className='text-white'>{likes[index]}</div>}
                 </IconButton>
-                <IconButton aria-label="share" style={{ color: "white" }}>
+                <IconButton aria-label="share" style={{ color: "white" }} onClick={() => handleShare(article.url, article.title)}>
                   <ShareIcon />
                 </IconButton>
                 <IconButton
@@ -116,12 +130,13 @@ export default function Body() {
                   <ExpandMoreIcon />
                 </IconButton>
               </CardActions>
-              
+
               <Collapse in={expanded === index} timeout="auto" unmountOnExit>
                 <Link key={index} href={article.url} style={{ textDecoration: "none", cursor: "pointer" }}>               
                   <CardContent>
                     <Typography style={{ color: "white" }} paragraph>Description:</Typography>
                     <Typography style={{ color: "white" }} paragraph>{article.description}</Typography>
+                    <Typography style={{ color: "#39CCCC" }} paragraph> By - {article.author} <span className='text-white'>|</span> {article.publishedAt}</Typography>
                   </CardContent>
                 </Link>
               </Collapse>

@@ -52,25 +52,21 @@ const Footer = () => {
          
 
         
-          <div className="mb-4 lg:mb-0">
-            <h5 className="text-uppercase mb-4 text-white">Careers</h5>
+    <div className="mb-4 lg:mb-0 hidden lg:block">
+    <h5 className="text-uppercase mb-4 text-white">Careers</h5>
 
-            <ul className="list-unstyled">
-              <li>
-                <a href="#!" className="text-white">Jobs</a>
-              </li>
-            </ul>
-          </div>
+    <ul className="list-unstyled">
+      <li>
+        <a href="#!" className="text-white">Jobs</a>
+      </li>
+    </ul>
+  </div>
        
-          <div>
-          
-
-            <div className="form-outline form-white mb-4">
-              <input type="email" id="form5Example2" className="form-control" />
-              <label className="form-label text-white ml-2" htmlFor="form5Example2">Email address</label>
-            </div>
-
-            <button type="submit" className="btn btn-outline-white btn-block text-white border p-2">Subscribe</button>
+          <div className="text-white">
+          <div className="lg:text-lg">
+            You can post your blogs
+          </div>
+            <button type="submit" className="btn btn-outline-white btn-block text-white border p-2 mt-2"><a href="https://medium-client-front.vercel.app/signup">Checkout 🚀</a></button>
           </div>
        
         </div>
@@ -79,9 +75,9 @@ const Footer = () => {
    
 
       
-      <div className="text-center p-3 border-top border-white">
-        © 2020 Copyright:
-        <a className="text-white" href="https://mdbootstrap.com/">Worldwire.com</a>
+      <div className="text-center text-white p-3 border-top border-white">
+        © 2024 Copyright
+        <a className="text-white ml-2" href="https://mdbootstrap.com/">Worldwire.com</a>
       </div>
       
     </footer>
