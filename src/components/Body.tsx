@@ -69,6 +69,10 @@ export default function Body() {
   };
 
   return (
+
+    <div className="text-center text-white">
+      <div className=' text-3xl mt-5 font-semibold text-yellow-400'>Top Headlines</div>
+    
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12 bg-black m-6">
       {!news ? (
         Array.from({ length: 8 }).map((_, index) => (
@@ -144,6 +148,7 @@ export default function Body() {
           )
         ))
       )}
+    </div>
     </div>
   );
 }
