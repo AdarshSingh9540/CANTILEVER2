@@ -300,30 +300,18 @@ export const InfiniteScrolling = ({
         urlToImage: "https://basketball.realgm.com/images/nba/4.2/wiretap/photos/2006/Silver_Adam_nba_240515.jpg"
       },
       {
-        author: "Tim Higgins",
-        content: "Elon Musk is racing to a sci-fi future while the AI chief at Meta Platforms is arguing for one rooted in the traditional scientific approach.\r\nThat divide in thinking was on display this past week du… [+6150 chars]",
-        description: "A debate with Meta’s AI chief ensued after he criticized Musk and his xAI startup.",
-        publishedAt: "2024-06-01T09:30:00Z",
-        source: {
-          id: "the-wall-street-journal",
-          name: "The Wall Street Journal"
+        "source": {
+          "id": null,
+          "name": "MakeUseOf"
         },
-        title: "Elon Musk and Facebook’s Top AI Official Are Battling Over the Future of AI",
-        url: "https://www.wsj.com/technology/elon-musk-vs-facebook-ai-metaverse-3bf4106f?st=3ff8f1vxhwqc0zp&reflink=desktopwebshare_permalink",
-        urlToImage: "https://s.yimg.com/ny/api/res/1.2/XWH1E2R1hJtHVRrcv9LLRQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/65210901ff256e4c6e6c25e7f8fcdce7"
+        "author": "Dreamchild Obari",
+        "title": "These Features Make the ChatGPT Desktop App Better Than the Website",
+        "description": "ChatGPT's desktop version is here and is well worth using instead of the website.",
+        "url": "https://www.makeuseof.com/features-make-chatgpt-desktop-app-better-than-website/",
+        "urlToImage": "https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2024/06/chatgpt-desktop-version-on-macos.jpg",
+        "publishedAt": "2024-06-28T15:30:12Z",
+        "content": "Key Takeaways\r\n<ul><li>\r\n The ChatGPT app for macOS introduces Voice Mode and a convenient launcher, allowing users to access ChatGPT from any window on their Mac.\r\n </li><li>\r\n The macOS app include… [+5006 chars]"
       },
-      {
-        author: "Walt Mossberg",
-        content: "Two new documentaries, \"The Beatles: Get Back\" and \"The Beatles: Get Back\", are both worth your time, but the original is a more expansive and complete look at the band's most tumultuous period.",
-        publishedAt: "2024-05-28T13:06:15Z",
-        source: {
-          id: "the-wall-street-journal",
-          name: "The Wall Street Journal"
-        },
-        title: "The Beatles: Get Back' Documentary Puts You in the Room With the Band",
-        url: "https://www.wsj.com/articles/this-beatles-documentary-puts-you-in-the-room-with-the-band-26ef303e",
-        urlToImage: "https://s.yimg.com/ny/api/res/1.2/bUgGzu__JYOTvvnoM8MwVQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://media.zenfs.com/en/the_wall_street_journal_hosted_996/a0d6a1f035a20e4b28402a7ac472432e"
-      }
     ]
   };
 
